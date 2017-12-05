@@ -1,0 +1,16 @@
+<!--one way dat binding
+<input (input)= updateServerName($event) type="text" class= "form-control" >-->
+<input [(ngModel)]= "serverName" type="text" class= "form-control" >
+
+<button class="btn btn-primary" (click)= onEnableNewServer() [disabled]= !allowNewServer >add a server</button>
+<!--<p>{{serverStatus}}</p>-->
+<!--<p [innerText]="serverStatus"></p>  -->
+
+<p *ngIf="serverCreated; else noServer">a new server was created, the name is: {{serverName}}</p>
+<ng-template #noServer>
+<p> No server was created </p>
+</ng-template>
+
+
+<!--<p>{{serverName}} </p>-->
+<app-server *ngFor="let server of servers"></app-server>

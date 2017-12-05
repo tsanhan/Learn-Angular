@@ -1,0 +1,6 @@
+
+<button class="btn btn-primary" (click)="disDet($event)">Display Details</button>
+<p *ngIf="hide">Secret Password: 'Tuna'</p>
+<p>{{num}}</p>
+<p *ngFor="let lo of log"  [ngClass]="{highlight: lo.isHightLited}" [ngStyle]="{backgroundColor: lo.getColor()}">number  {{lo.num}}: was clicked at {{lo.timeStamp}}</p>
+
